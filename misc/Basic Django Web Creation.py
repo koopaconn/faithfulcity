@@ -240,7 +240,7 @@
 				class Meta:
 					model = MyModel
 					#options
-					field = '__all__'
+					fields = '__all__'
 					exclude = ('field1','field2')
 					include = ('field1','field2')
 

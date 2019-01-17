@@ -9,3 +9,9 @@ class HomePage(TemplateView):
     #     if request.user.is_authenticated():
     #         return HttpResponseRedirect(reverse("test"))
     #     return super().get(request, *args, **kwargs)
+
+class HomeAbout(TemplateView):
+    template_name = "about.html"
+
+class HomeContact(TemplateView):
+    template_name = "contact.html"
