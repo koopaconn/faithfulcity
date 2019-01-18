@@ -9,13 +9,52 @@ Faithful City - About
 <link rel="stylesheet" href="{% static '/css/about.css' %}">
 {% endblock %}
 
+{% block nav_block %}
+<div class="headerpic">
+  <img src="{% static '/images/logo1wide.png' %}" class="" alt="">
+</div>
+{% endblock %}
+
 {% block body_block %}
 
-<div class="jumbotron">
-  <h1 class="display-3">Welcome to Faithful City</h1>
-  <p class="lead">At faithful city our goal is to connect people to the Church. We provide the tools and
-  information to help people find a place to connect to the body and call a home.</p>
+<h1 class="text-center">About Us</h1>
+
+<div class="container">
+  <div class="row flex-column-reverse flex-md-row">
+    <div class="col-md-6">
+      <img class="left" src="{% static '/images/fellowship.jpg' %}" alt="">
+    </div>
+    <div class="col-md-6">
+      <h2>Connecting people to churches</h2>
+      <p>Finding a church were Jesus followers can thrive is important.
+        At Faithful City we want to connect people to churches regardless of denomination.
+        Because one of the most important parts of being a Chrisitan is fellowship.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Find the lost in the city</h2>
+      <p>As Christian we should be driven to seek and save the lost.
+        At Faithful City we strive to find the lost in our city and connect them with a church.
+        We do this by creating tools that make it easier to find a church they can feel at home in.</p>
+    </div>
+    <div class="col-md-6">
+      <span class="right"><img style="height:100%" src="{% static '/images/kcsky.jpg' %}" alt=""></span>
+    </div>
+  </div>
+  <div class="row  flex-column-reverse flex-md-row">
+    <div class="col-md-6">
+      <img class="left" src="{% static '/images/needy.jpg' %}" alt="">
+    </div>
+    <div class="col-md-6">
+      <h2>Help those in need</h2>
+      <p>Christians should have a heart for the needy. Creating tools to connect people is the first part of our goals.
+      A future goal is to unite the church is the Kansas City area to make a bigger differnce that any one church
+      could. Combining resources and time to impact our city.</p>
+    </div>
+  </div>
 </div>
+
 
 <a href="#">
   <div class="container" id="direcindex">
@@ -26,6 +65,5 @@ Faithful City - About
     </div>
   </div>
 </a>
-
 
 {% endblock %}
