@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title_block %}
+Faithful City - Directory
+{% endblock %}
+
+{% block style_block %}
+<link rel="stylesheet" href="{% static '/css/directory.css' %}">
+{% endblock %}
+
+{% block nav_block %}
+<div class="headerpic">
+  <img src="{% static '/images/logo1wide.png' %}" class="" alt="">
+</div>
+{% endblock %}
+
+
+{% block body_block %}
+<div class="categories">
+  <h1>Categories</h1>
+  <div class="row">
+    <div class="col-md">
+      <h3>Basic Info</h3>
+      <ul>
+        <li>
+          <label class="switch">
+            <input type="checkbox" id="1" checked>
+            <span class="slider"></span>
+          </label>Name
+        </li>
+        <li>
+          <label class="switch">
+            <input type="checkbox" id="2" checked>
+            <span class="slider"></span>
+          </label>Location
+        </li>
+        <li>
+          <label class="switch">
+            <input type="checkbox" id="3" checked>
+            <span class="slider"></span>
+          </label>Denomination
+        </li>
+        <li>
+          <label class="switch">
+            <input type="checkbox" id="8">
+            <span class="slider"></span>
+          </label>pastor
+        </li>
+      </ul>
+    </div>
+    <div class="col-md">
+      <h3>Services</h3>
+      <ul>
+        <li>Number of Services</li>
+        <li>Service Times</li>
+      </ul>
+    </div>
+    <div class="col-md">
+      <h3>Size</h3>
+      <ul>
+        <li>Number of Campuses</li>
+        <li>Number of Attenders</li>
+      </ul>
+    </div>
+    <div class="col-md">
+      <h3>Online</h3>
+      <ul>
+        <li>Webisite</li>
+        <li>Podcast</li>
+      </ul>
+    </div>
+    <div class="col-md">
+      <h3>Demographics</h3>
+      <ul>
+        <li>Percentage 13-24</li>
+        <li>Percentage 25-34</li>
+        <li>Percentage 35-55</li>
+        <li>Percentage 55+</li>
+        <li>Percent of Familes</li>
+      </ul>
+    </div>
+    <div class="col-md">
+      <h3>Misc</h3>
+      <ul>
+        <li>Sunday School</li>
+        <li>Small Groups</li>
+        <li>Preaching Style</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="" id="directable">
+  <table id="foo">
+    <tr>
+      <th id="td1" style="display:table-cell;">Name</th>
+      <th id="td2" style="display:table-cell;">Location</th>
+      <th id="td3" style="display:table-cell;">Denomination</th>
+      <th id="td4" style="display:none;">Number of Serivces</th>
+      <th id="td5" style="display:table-cell;">Service Times</th>
+      <th id="td6" style="display:table-cell;">Website</th>
+      <th id="td7" style="display:none;">Podcast</th>
+      <th id="td8" style="display:none;">Pastor</th>
+      <th id="td9" style="display:none;">Number of Campuses</th>
+      <th id="td10" style="display:none;">Number of Attenders</th>
+      <th id="td11" style="display:none;">Percentage 13-24</th>
+      <th id="td12" style="display:none;">Percentage 25-34</th>
+      <th id="td13" style="display:none;">Percentage 35-55</th>
+      <th id="td14" style="display:none;">Percentage 55+</th>
+      <th id="td15" style="display:none;">Percent Familes</th>
+      <th id="td16" style="display:none;">Church Start Date</th>
+      <th id="td17" style="display:none;">Sunday School</th>
+      <th id="td18" style="display:none;">Small Groups</th>
+      <th id="td19" style="display:none;">Preaching Style</th>
+    </tr>
+  {% for church in directory %}
+    <tr>
+      <td id="tda" style="display:table-cell;"><div style="width:120px">{{church.name}}</div></td>
+      <td id="tdb" style="display:table-cell;"><div class=scrollable>{{church.location}}</div></td>
+      <td id="tdc" style="display:table-cell;"><div class=scrollable>{{church.denomination}}</div></td>
+      <td id="tdd" style="display:none;"><div class=scrollable>{{church.services}}</div></td>
+      <td id="tde" style="display:table-cell;"><div class=scrollable>{{church.serviceTimes}}</div></td>
+      <td id="tdf" style="display:table-cell;"><div class=scrollable><a href="{{church.website}}">{{church.website}}</a></div></td>
+      <td id="tdg" style="display:none;"><div class=scrollable><a href="{{church.podcast}}">{{church.podcast}}</a></div></td>
+      <td id="tdh" style="display:none;"><div class=scrollable>{{church.pastor}}</div></td>
+      <td id="tdj" style="display:none;"><div class=scrollable>{{church.noCampuses}}</div></td>
+      <td id="tdk" style="display:none;"><div class=scrollable>{{church.size}}</div></td>
+      <td id="tdl" style="display:none;"><div class=scrollable>{{church.ageRange13_24}</div>}</td>
+      <td id="tdm" style="display:none;"><div class=scrollable>{{church.ageRange25_35}}</div></td>
+      <td id="tdn" style="display:none;"><div class=scrollable>{{church.ageRange35_55}}</div></td>
+      <td id="tdo" style="display:none;"><div class=scrollable>{{church.ageRange55}}</div></td>
+      <td id="tdp" style="display:none;"><div class=scrollable>{{church.perFamily}}</div></td>
+      <td id="tdq" style="display:none;"><div class=scrollable>{{church.startDate}}</div></td>
+      <td id="tds" style="display:none;"><div class=scrollable>{{church.sundaySchool}}</div></td>
+      <td id="tdt" style="display:none;"><div class=scrollable>{{church.smallGroups}}</div></td>
+      <td id="tdu" style="display:none;"><div class=scrollable>{{church.preachingStyle}}</div></td>
+    </tr>
+  {% endfor %}
+  </table>
+</div>
+
+<script type="text/javascript" src='{% static '/js/directory.js' %}'></script>
+
+{% endblock %}

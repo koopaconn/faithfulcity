@@ -19,3 +19,17 @@ body, html{
   border-top: 2px solid #26233d;
   border-bottom: 2px solid #26233d;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(38, 35, 61, 1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(38, 35, 61, 0.75);
+}
