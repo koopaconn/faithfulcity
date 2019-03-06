@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'churches',
     'users',
     'firstchurch',
+    'django_tables2',
 ]
 
 MIDDLEWARE = [

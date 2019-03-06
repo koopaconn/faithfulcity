@@ -6,6 +6,7 @@ class model_church(models.Model):
     denomination = models.CharField(max_length=128)
     services = models.IntegerField()
     serviceTimes = models.CharField(max_length=128)
+    phoneNumber = models.CharField(max_length=128)
     website = models.CharField(max_length=128)
     podcast = models.CharField(max_length=128)
     pastor = models.CharField(max_length=128)
@@ -22,7 +23,7 @@ class model_church(models.Model):
     smallGroups = models.CharField(max_length=3, choices=STATE_CHOICES)
     PREACH_STYLE = (('Topical',1),('Verse-by-verse',2),('Narrative',3),('Other',4),('Mix',5),)
     preachingStyle = models.CharField(max_length=128, choices=PREACH_STYLE)
-    leadPic = models.ImageField()
+    leadPic = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.name

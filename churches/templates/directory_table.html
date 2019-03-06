@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load render_table from django_tables2 %}
+
+{% block title_block %}
+Faithful City - Directory
+{% endblock %}
+
+{% block style_block %}
+<link rel="stylesheet" href="{% static '/css/directory.css' %}">
+<script type="text/javascript" src="{% static '/js/sorttable.js' %}"></script>
+{% endblock %}
+
+{% block nav_block %}
+<div class="headerpic">
+  <img src="{% static '/images/logo1wide.png' %}" class="" alt="">
+</div>
+{% endblock %}
+
+
+{% block body_block %}
+<div class="row">
+  <div class="col-lg-2">
+
+  <div class="categories">
+    <h1>Categories</h1>
+    <label class="switch">
+      <input type="checkbox" id="default">
+      <span class="slider"></span>
+    </label>Default
+    <label class="switch">
+      <input type="checkbox" id="all">
+      <span class="slider"></span>
+    </label>All Categories
+    <div class="row">
+      <div class="col-md">
+        <h3>Basic Info</h3>
+        <ul>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="1" checked>
+              <span class="slider"></span>
+            </label>Name
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="2" checked>
+              <span class="slider"></span>
+            </label>Location
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="3" checked>
+              <span class="slider"></span>
+            </label>Denomination
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="8">
+              <span class="slider"></span>
+            </label>Head Pastor
+          </li>
+        </ul>
+      </div>
+      <div class="col-md">
+        <h3>Services</h3>
+        <ul>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="4">
+              <span class="slider"></span>
+            </label>Number of Services
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="5" checked>
+              <span class="slider"></span>
+            </label>Service Times
+          </li>
+        </ul>
+      </div>
+      <div class="col-md">
+        <h3>Size</h3>
+        <ul>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="9">
+              <span class="slider"></span>
+            </label>Number of Campuses
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="10">
+              <span class="slider"></span>
+            </label>Number of Attendees
+          </li>
+        </ul>
+      </div>
+      <div class="col-md">
+        <h3>Online</h3>
+        <ul>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="6" checked>
+              <span class="slider"></span>
+            </label>Website
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="7">
+              <span class="slider"></span>
+            </label>Podcast
+          </li>
+        </ul>
+      </div>
+      <div class="col-md">
+        <h3>Demographics</h3>
+        <ul>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="11">
+              <span class="slider"></span>
+            </label>Percentage 13-24
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="12">
+              <span class="slider"></span>
+            </label>Percentage 25-34
+            </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="13">
+              <span class="slider"></span>
+            </label>Percentage 35-55
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="14">
+              <span class="slider"></span>
+            </label>Percentage 55+
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="15">
+              <span class="slider"></span>
+            </label>Percent of Familes
+          </li>
+        </ul>
+      </div>
+      <div class="col-md">
+        <h3>Misc</h3>
+        <ul>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="16">
+              <span class="slider"></span>
+            </label>Church Start Date
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="17">
+              <span class="slider"></span>
+            </label>Sunday School
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="18">
+              <span class="slider"></span>
+            </label>Small Groups
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="19">
+              <span class="slider"></span>
+            </label>Preaching Style
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="col-lg-10">
+    <div class="" id="directable">
+      {% render_table table %}
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src='{% static '/js/directory.js' %}'></script>
+
+{% endblock %}
