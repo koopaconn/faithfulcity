@@ -22,3 +22,8 @@ def view_churchlist(request):
     table = ChurchTable(models.model_church.objects.all())
     RequestConfig(request).configure(table)
     return render(request, 'directory_table.html', {'table': table})
+
+# class view_churchlist(SingleTableMixin, FilterView):
+#     table_class = ChurchTable
+#     model = models.model_church
+#     template_name = 'directory_table.html'
