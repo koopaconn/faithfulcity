@@ -1,8 +1,9 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 class model_church(models.Model):
     name = models.CharField(max_length=128)
-    location = models.CharField(max_length=128)
+    location = HTMLField(max_length=128)
     denomination = models.CharField(max_length=128)
     services = models.IntegerField()
     serviceTimes = models.CharField(max_length=128)

@@ -1,4 +1,13 @@
-  // 
+try {
+  var checkArrayKey = sessionStorage.getItem("checkArrayKey").split(",");
+  var arrayLength = checkArrayKey.length;
+  for (var i = 0; i < arrayLength; i++) {
+      var defid = checkArrayKey[i].toString()
+      $('#foo tr > *:nth-child(' + defid + ')').show();
+      $('#' + defid).prop("checked", true);
+  }
+}
+catch (e) {console.log("No checkArrayKey");}
   // for (var i = 0; i < 21; i++) {
   //   var defid = i.toString()
   //   if (['1', '2', '3', '5', '6'].indexOf(defid) >= 0) {
@@ -12,6 +21,7 @@
 
 $('input:checkbox').change(
   function() {
+    var checkArray = []
     var column = $(this).attr("id")
     if (column == "all") {
       for (var i = 0; i < 21; i++) {
@@ -37,5 +47,13 @@ $('input:checkbox').change(
     } else {
       $('#foo tr > *:nth-child(' + column + ')').hide();
     }
+    for (var i = 0; i < 21; i++) {
+      var defid = i.toString()
+      if ($('#' + defid).is(':checked')) {
+        checkArray.push(defid)
+      }
+    }
+    sessionStorage.setItem("checkArrayKey", checkArray);
+    console.log(checkArray);
     console.log('#foo tr > *:nth-child(' + column + ')');
   });

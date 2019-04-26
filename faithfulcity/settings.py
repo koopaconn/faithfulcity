@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'users',
     'firstchurch',
     'django_tables2',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
