@@ -12,11 +12,11 @@ class ChurchTable(tables.Table):
     services = tables.Column(attrs={'th': {'style':'display:none'},'td': {'style':'display:none'}},verbose_name='Services')
     serviceTimes = tables.Column(attrs={'th': {'style':'display:table-cell'},'td': {'style':'display:table-cell'}},verbose_name='Service Times')
     phoneNumber = tables.Column(attrs={'th': {'style':'display:table-cell'},'td': {'style':'display:table-cell'}},verbose_name='Phone')
-    website = tables.Column(attrs={'th': {'style':'display:none'},'td': {'style':'display:none'}},verbose_name='Website')
+    website = tables.URLColumn(attrs={'th': {'style':'display:table-cell'},'td': {'style':'display:table-cell'}},verbose_name='Website')
     podcast = tables.Column(attrs={'th': {'style':'display:none'},'td': {'style':'display:none'}},verbose_name='Podcast')
     pastor = tables.Column(attrs={'th': {'style':'display:none'},'td': {'style':'display:none'}},verbose_name='Head Pastor')
     noCampuses = tables.Column(attrs={'th': {'style':'display:none'},'td': {'style':'display:none'}},verbose_name='Number of Campuses')
-    size = tables.Column(attrs={'th': {'style':'display:none'},'td': {'style':'display:none'}},verbose_name='Congregation Size')
+    size = tables.Column(attrs={'th': {'style':'display:none'},'td': {'style':'display:none'}},verbose_name='Size')
     ageRange13_24 = tables.Column(attrs={'th': {'style':'display:none'},'td': {'style':'display:none'}},verbose_name='Percent 13-24')
     ageRange25_35 = tables.Column(attrs={'th': {'style':'display:none'},'td': {'style':'display:none'}},verbose_name='Percent 25-35')
     ageRange35_55 = tables.Column(attrs={'th': {'style':'display:none'},'td': {'style':'display:none'}},verbose_name='Percent 35-55')
@@ -30,4 +30,4 @@ class ChurchTable(tables.Table):
     class Meta:
         attrs = {'id': 'foo'}
         model = model_church
-        template_name = 'django_tables2/bootstrap.html'
+        template_name = 'django_tables2/bootstrap4.html'

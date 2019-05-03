@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% load render_table from django_tables2 %}
+{% load bootstrap3 %}
 
 {% block title_block %}
 Faithful City - Directory
@@ -98,7 +99,7 @@ Faithful City - Directory
             <label class="switch">
               <input type="checkbox" id="11">
               <span class="slider"></span>
-            </label>Number of Attendees
+            </label>Size
           </li>
         </ul>
       </div>
@@ -161,7 +162,7 @@ Faithful City - Directory
             <label class="switch">
               <input type="checkbox" id="17">
               <span class="slider"></span>
-            </label>Church Start Date
+            </label>Opening Date
           </li>
           <li>
             <label class="switch">
@@ -185,11 +186,19 @@ Faithful City - Directory
       </div>
     </div>
   </div>
+
+  {% if filter %}
+  <form action="" method="get" class="form form-inline">
+      {% bootstrap_form filter.form layout='inline' %}
+        {% bootstrap_button 'filter' %}
+  </form>
+  {% endif %}
+
 </div>
 
   <div class="col-lg-10">
     <div class="" id="directable">
-      {% render_table table %}
+      {% render_table table%}
     </div>
   </div>
 </div>

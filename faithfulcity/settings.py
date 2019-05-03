@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'firstchurch',
     'django_tables2',
     'tinymce',
+    'django_filters',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [

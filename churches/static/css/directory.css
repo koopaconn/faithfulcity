@@ -28,10 +28,11 @@ ul {
 }
 
 #directable {
-  overflow: auto;
+  overflow: scroll;
   margin: 5px;
   margin-top: 40px;
   text-align: center;
+  height: 800px;
 }
 
 table {
